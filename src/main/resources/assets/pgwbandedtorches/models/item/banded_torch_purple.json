@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures":
+  {
+    "layer0": "pgwbandedtorches:blocks/banded_torch_purple"
+  }
+}

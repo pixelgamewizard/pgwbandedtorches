@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "conditions":
+  [
+    {
+      "type": "allow_torch_duplication_recipe"
+    }
+  ],
+  "ingredients":
+  [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "pgwbandedtorches:banded_torch_brown"
+    }
+  ],
+  "result":
+  {
+    "item": "pgwbandedtorches:banded_torch_brown",
+    "count": 2
+  }
+}

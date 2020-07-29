@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeYellow"
+    }
+  ],
+  "result":
+  {
+    "item": "pgwbandedtorches:banded_torch_yellow",
+    "count": 1
+  }
+}

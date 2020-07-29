@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up":    { "model": "pgwbandedtorches:banded_torch_white" },
+    "facing=east":  { "model": "pgwbandedtorches:banded_torch_white_wall" },
+    "facing=south": { "model": "pgwbandedtorches:banded_torch_white_wall", "y": 90 },
+    "facing=west":  { "model": "pgwbandedtorches:banded_torch_white_wall", "y": 180 },
+    "facing=north": { "model": "pgwbandedtorches:banded_torch_white_wall", "y": 270 }
+  }
+}

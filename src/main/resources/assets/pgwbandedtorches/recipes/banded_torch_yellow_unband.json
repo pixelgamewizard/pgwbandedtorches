@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "pgwbandedtorches:banded_torch_yellow"
+    }
+  ],
+  "result":
+  {
+    "item": "minecraft:torch",
+    "count": 1
+  }
+}

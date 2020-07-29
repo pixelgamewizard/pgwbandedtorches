@@ -1,0 +1,7 @@
+{
+  "parent": "block/torch_wall",
+  "textures":
+  {
+    "torch": "pgwbandedtorches:blocks/banded_torch_lime"
+  }
+}
