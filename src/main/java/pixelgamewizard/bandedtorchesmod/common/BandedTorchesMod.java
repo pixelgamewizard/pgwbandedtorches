@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 )
 public class BandedTorchesMod {
     public static final String MODID = "pgwbandedtorches";
-    public static final String NAME = "PixelGameWizard Banded Torches";
+    public static final String NAME = "Banded Torches";
     public static final String VERSION = "0.9.20200729a";
     public static final String MC_VERSION = "[1.12.2]";
     
