@@ -28,7 +28,7 @@ If your configuration allows it (see below), you can apply a band from one torch
 
 `allowTorchDuplicationRecipe` : Allows you to quickly make new banded torches from an existing one and a normal torch. Avoids having to farm dyes. Default is `true`.
 
-`useDistinctInventoryIcon` : (Client-side only) Torch icons will be taken from `textures/items` rather than using the block texture (`textures/blocks`). The icons included with the mod should help to more easily distinguish the banded torches from the original torch and from each other (especially when the stack counter is higher). Default is `true`.
+`useDistinctInventoryIcon` : (Client-side only) Torch icons will be taken from `textures/items` rather than using the block texture (`textures/blocks`). The icons included with the mod should help to more easily distinguish the banded torches from the original torch and from each other (especially when the stack counter is higher). [Reference Picture.](https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/config_icon_comparison.png) Default is `true`.
 
 ## FAQ
 
