@@ -17,28 +17,36 @@ public class ModelRegistrationHandler {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event)
     {
-        registerModel(ModBlocks.BANDED_TORCH_WHITE);
-        registerModel(ModBlocks.BANDED_TORCH_ORANGE);
-        registerModel(ModBlocks.BANDED_TORCH_MAGENTA);
-        registerModel(ModBlocks.BANDED_TORCH_LIGHT_BLUE);
-        registerModel(ModBlocks.BANDED_TORCH_YELLOW);
-        registerModel(ModBlocks.BANDED_TORCH_LIME);
-        registerModel(ModBlocks.BANDED_TORCH_PINK);
-        registerModel(ModBlocks.BANDED_TORCH_GRAY);
-        registerModel(ModBlocks.BANDED_TORCH_LIGHT_GRAY);
-        registerModel(ModBlocks.BANDED_TORCH_CYAN);
-        registerModel(ModBlocks.BANDED_TORCH_PURPLE);
-        registerModel(ModBlocks.BANDED_TORCH_BLUE);
-        registerModel(ModBlocks.BANDED_TORCH_BROWN);
-        registerModel(ModBlocks.BANDED_TORCH_GREEN);
-        registerModel(ModBlocks.BANDED_TORCH_RED);
-        registerModel(ModBlocks.BANDED_TORCH_BLACK);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_WHITE);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_ORANGE);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_MAGENTA);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_LIGHT_BLUE);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_YELLOW);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_LIME);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_PINK);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_GRAY);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_LIGHT_GRAY);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_CYAN);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_PURPLE);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_BLUE);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_BROWN);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_GREEN);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_RED);
+        registerBandedTorchModelItem(ModBlocks.BANDED_TORCH_BLACK);
     }
 
-    private static void registerModel(Block block)
+    private static void registerBandedTorchModelItem(Block block)
     {
         Item item = Item.getItemFromBlock(block);
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        String iconFileName = "";
+        if (BandedTorchesMod.CONFIGURATION.getUseDistinctInventoryIcon())
+        {
+            iconFileName = item.getRegistryName() + "_distinct";
+        }
+        else
+        {
+            iconFileName = item.getRegistryName() + "";
+        }
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(iconFileName, "inventory"));
     }
-
 }

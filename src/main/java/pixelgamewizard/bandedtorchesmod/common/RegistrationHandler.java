@@ -67,11 +67,11 @@ public class RegistrationHandler {
         };
         for (Block block : blocks)
         {
-            ItemBlock caveCrystalBlockItem = new ItemBlock(block);
-            caveCrystalBlockItem.setRegistryName(block.getRegistryName());
+            ItemBlock blockItem = new ItemBlock(block);
+            blockItem.setRegistryName(block.getRegistryName());
             String translationKey = block.getRegistryName().toString().replace(':','.');
-            caveCrystalBlockItem.setTranslationKey(translationKey);
-            event.getRegistry().register(caveCrystalBlockItem);
+            blockItem.setTranslationKey(translationKey);
+            event.getRegistry().register(blockItem);
         }
     }
     
