@@ -1,7 +1,6 @@
 templates = [
-  'banded_torch_white_create.json',
-  'banded_torch_white_duplicate.json',
-  'banded_torch_white_unband.json'
+  'banded_torch_white.json',
+  'banded_torch_white_wall.json'
 ]
 
 colors = [

@@ -1,7 +1,7 @@
 {
-  "parent": "block/torch",
+  "parent": "minecraft:block/template_torch",
   "textures":
   {
-    "torch": "pgwbandedtorches:blocks/banded_torch_brown"
+    "torch": "pgwbandedtorches:block/banded_torch_brown"
   }
 }

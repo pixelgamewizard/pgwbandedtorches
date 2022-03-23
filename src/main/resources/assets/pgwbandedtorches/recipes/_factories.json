@@ -1,5 +1,0 @@
-{
-  "conditions": {
-    "allow_torch_duplication_recipe": "pixelgamewizard.bandedtorchesmod.common.AllowTorchDuplicationRecipeConditionFactory"
-  }
-}

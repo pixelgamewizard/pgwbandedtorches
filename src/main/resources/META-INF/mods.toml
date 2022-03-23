@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+issueTrackerURL="https://github.com/pixelgamewizard/pgwbandedtorches/issues"
+
+[[mods]]
+modId="pgwbandedtorches"
+version="${file.jarVersion}"
+displayName="PixelGameWizard's Banded Torches"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/pixelgamewizards-banded-torches"
+# A file name (in the root of the mod JAR) containing a logo for display
+# logoFile="examplemod.png" #optional
+# A text field displayed in the mod UI
+# credits="Thanks for this example mod goes to Java" #optional
+authors="PixelGameWizard" #optional
+description='''
+This is a simple mod to add varied torches. The torches appear similar to those of regular Minecraft, except there is a colourful band.
+
+What that band means is up to you - maybe it was left by another player, or maybe it has some other meaning!
+'''
+

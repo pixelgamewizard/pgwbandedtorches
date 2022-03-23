@@ -1,6 +1,6 @@
 {
-  "pack": {
-	  "pack_format": 3,
-	  "description": "Resources for pgwbandedtorches."
-  }
+    "pack": {
+        "description": "PixelGameWizard's Banded Torches Resources",
+        "pack_format": 6
+    }
 }

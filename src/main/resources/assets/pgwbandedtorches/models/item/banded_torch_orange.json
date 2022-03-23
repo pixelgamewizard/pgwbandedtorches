@@ -2,6 +2,6 @@
   "parent": "item/generated",
   "textures":
   {
-    "layer0": "pgwbandedtorches:blocks/banded_torch_orange"
+    "layer0": "pgwbandedtorches:item/banded_torch_orange"
   }
 }
