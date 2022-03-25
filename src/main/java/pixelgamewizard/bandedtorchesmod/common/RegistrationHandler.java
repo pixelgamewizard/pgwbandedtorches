@@ -16,43 +16,16 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
-public class RegistryHandler
+public class RegistrationHandler
 {
-    private static final String BANDED_TORCH_BASE_NAME = "banded_torch_";
-    public static final int COLOUR_COUNT = 16;
-    private static final String[] colours =
-    {
-        "white",
-        "orange",
-        "magenta",
-        "light_blue",
-        "yellow",
-        "lime",
-        "pink",
-        "gray",
-        "light_gray",
-        "cyan",
-        "purple",
-        "blue",
-        "brown",
-        "green",
-        "red",
-        "black"
-    };
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BandedTorchesMod.MODID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BandedTorchesMod.MODID);
-    static class RegistryObjects
-    {
-        public RegistryObject<Block> block;
-        public RegistryObject<Block> wallBlock;
-        public RegistryObject<Item> item;
-    }
-    public static final RegistryObjects[] REGISTRY_OBJECTS = new RegistryObjects[COLOUR_COUNT];
     static
     {
-        for (int colourIndex = 0; colourIndex < COLOUR_COUNT; colourIndex++)
+        for (int colourIndex = 0; colourIndex < Constants.COLOURS.length; colourIndex++)
         {
-            String bandedTorchName = BANDED_TORCH_BASE_NAME + colours[colourIndex];
+            String BANDED_TORCH_BASE_NAME = "banded_torch_";
+            String bandedTorchName = BANDED_TORCH_BASE_NAME + Constants.COLOURS[colourIndex];
             RegistryObject<Block> blockRegistryObject = BLOCKS.register(
                 bandedTorchName,
                 () -> new TorchBlock(
@@ -63,8 +36,8 @@ public class RegistryHandler
                     .lightLevel((BlockState) -> {return 14;})
                     .sound(SoundType.WOOD),
                     ParticleTypes.FLAME));
-            REGISTRY_OBJECTS[colourIndex] = new RegistryObjects();
-            REGISTRY_OBJECTS[colourIndex].block = blockRegistryObject;
+            ModBlocks.torches[colourIndex] = new ModBlocks.TorchBlockRegistryObjects();
+            ModBlocks.torches[colourIndex].block = blockRegistryObject;
             RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
                 bandedTorchName + "_wall",
                 () -> new WallTorchBlock(
@@ -76,8 +49,8 @@ public class RegistryHandler
                     .sound(SoundType.WOOD)
                     .lootFrom(blockRegistryObject),
                     ParticleTypes.FLAME));
-            REGISTRY_OBJECTS[colourIndex].wallBlock = wallBlockRegistryObject;
-            REGISTRY_OBJECTS[colourIndex].item = ITEMS.register(
+            ModBlocks.torches[colourIndex].wallBlock = wallBlockRegistryObject;
+            ModBlocks.torches[colourIndex].item = ITEMS.register(
                 bandedTorchName,
                 () -> new WallOrFloorItem(
                     blockRegistryObject.get(),
