@@ -6,8 +6,7 @@
       "item": "minecraft:torch"
     },
     {
-      "type": "forge:ore_dict",
-      "ore": "dyeBlue"
+     "item": "minecraft:blue_dye"
     }
   ],
   "result":

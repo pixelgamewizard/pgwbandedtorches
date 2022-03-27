@@ -6,13 +6,12 @@
       "item": "minecraft:torch"
     },
     {
-      "type": "forge:ore_dict",
-      "ore": "dyeBrown"
+     "item": "minecraft:orange_dye"
     }
   ],
   "result":
   {
-    "item": "pgwbandedtorches:banded_torch_brown",
+    "item": "pgwbandedtorches:banded_torch_orange",
     "count": 1
   }
 }

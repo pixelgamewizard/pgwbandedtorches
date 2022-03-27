@@ -6,13 +6,12 @@
       "item": "minecraft:torch"
     },
     {
-      "type": "forge:ore_dict",
-      "ore": "dyeCyan"
+     "item": "minecraft:green_dye"
     }
   ],
   "result":
   {
-    "item": "pgwbandedtorches:banded_torch_cyan",
+    "item": "pgwbandedtorches:banded_torch_green",
     "count": 1
   }
 }
