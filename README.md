@@ -1,6 +1,6 @@
 # PixelGameWizard's Banded Torches
 
-![Picture of banded torches](https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/showcase_torches.png "Banded Torches")
+![Picture of banded torches](https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/1_16_5/showcase_torches.png "Banded Torches")
 
 ## Brief Description
 
@@ -12,37 +12,37 @@ Have you ever gone adventuring with a friend and wished you had a way to tell yo
 
 ## Crafting
 
-Simply combine a torch and one of the sixteen standard dyes (or equivalents from other mods) into a crafting grid. That's it!
+Simply combine a torch and a dye into a crafting grid. That's it!
 
-<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/recipe_creation.png" width="250" height="140" />
+<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/1_16_5/recipe_creation.png" width="250" height="140" />
 
 If you don't want the band on your torch anymore, you can place your banded torch into a crafting grid and recover the normal torch.
 
-<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/recipe_unband.png" width="250" height="140" />
+<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/1_16_5/recipe_unband.png" width="250" height="140" />
 
-If your configuration allows it (see below), you can apply a band from one torch to another. You don't need one dye per torch.
+You can copy a band from one torch over to another. You don't need one dye per torch.
 
-<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/recipe_duplication.png" width="250" height="140" />
+<img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/1_16_5/recipe_duplication.png" width="250" height="140" />
 
 ## Configuration
 
-`allowTorchDuplicationRecipe` : Allows you to quickly make new banded torches from an existing one and a normal torch. Avoids having to farm dyes. Default is `true`.
+The configuration file was removed from the 1.16.5 version. If you want to change the icons or disable certain recipes, you can now do so through custom data packs!
 
-`useDistinctInventoryIcon` : (Client-side only) Torch icons will be taken from `textures/items` rather than using the block texture (`textures/blocks`). The icons included with the mod should help to more easily distinguish the banded torches from the original torch and from each other (especially when the stack counter is higher). [Reference Picture.](https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/config_icon_comparison.png) Default is `true`.
+Note that the torch item icons are deliberately offset upward a little bit so that the band is more clearly visible (especially if you have more than double digits of that item), so be warned before changing them. :-)
 
 ## FAQ
 
 **Are there any dependencies?**
 
-No. I might add optional dependencies sometime in the future, but my intention is to keep this mod required dependency-free.
+No. I might add optional dependencies sometime in the future, but my intention is to keep this mod free of required dependencies.
 
 **Are there any incompatibilities?**
 
-There are no incompatibilities that I am aware of at the time of writing. I expect that the banded torches added by this mod might not adopt functionality from other mods added to normal torches (e.g. usable in multipart blocks, for example), but you might try it anyway just to see.
+There are no incompatibilities that I am aware of at the time of writing. I expect that the banded torches added by this mod might not adopt functionality from other mods added to normal torches, but you might try it anyway just to see.
 
-**Will you be updating this mod to Minecraft version X?**
+**Will you be backporting/updating this mod to Minecraft version X?**
 
-Possibly. But I do not plan to maintain multiple Minecraft versions in parallel. I plan to wait until enough players and mods have migrated to another Minecraft version, then make the switch. As such it's possible that I will skip over certain (less used) Minecraft versions.
+I will not be backporting to previous versions. I intend to update to the latest Minecraft 1.18 version fairly soon.
 
 ## Miscellaneous Information
 
