@@ -24,6 +24,8 @@ You can copy a band from one torch over to another. You don't need one dye per t
 
 <img src="https://raw.githubusercontent.com/pixelgamewizard/pgwbandedtorches/master/doc/1_16_5/recipe_duplication.png" width="250" height="140" />
 
+The same recipe will work for soul torches, unless you've customized the recipes through a data pack to work in some other way.
+
 ## Configuration
 
 The configuration file was removed from the 1.16.5 version. If you want to change the icons or disable certain recipes, you can now do so through custom data packs!
