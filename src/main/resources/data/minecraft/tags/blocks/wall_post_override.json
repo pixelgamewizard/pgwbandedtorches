@@ -1,0 +1,23 @@
+{
+    "replace": false,
+    "values":
+    [
+        "pgwbandedtorches:banded_torch_white",
+        "pgwbandedtorches:banded_torch_orange",
+        "pgwbandedtorches:banded_torch_magenta",
+        "pgwbandedtorches:banded_torch_light_blue",
+        "pgwbandedtorches:banded_torch_yellow",
+        "pgwbandedtorches:banded_torch_lime",
+        "pgwbandedtorches:banded_torch_pink",
+        "pgwbandedtorches:banded_torch_gray",
+        "pgwbandedtorches:banded_torch_light_gray",
+        "pgwbandedtorches:banded_torch_cyan",
+        "pgwbandedtorches:banded_torch_purple",
+        "pgwbandedtorches:banded_torch_blue",
+        "pgwbandedtorches:banded_torch_brown",
+        "pgwbandedtorches:banded_torch_green",
+        "pgwbandedtorches:banded_torch_red",
+        "pgwbandedtorches:banded_torch_black"
+    ]
+}
+
