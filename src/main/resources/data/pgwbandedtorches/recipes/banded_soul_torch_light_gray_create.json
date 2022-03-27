@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "minecraft:soul_torch"
+    },
+    {
+     "item": "minecraft:light_gray_dye"
+    }
+  ],
+  "result":
+  {
+    "item": "pgwbandedtorches:banded_soul_torch_light_gray",
+    "count": 1
+  }
+}

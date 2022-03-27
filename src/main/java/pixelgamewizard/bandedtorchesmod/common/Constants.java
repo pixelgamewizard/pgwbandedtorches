@@ -1,9 +1,11 @@
 package pixelgamewizard.bandedtorchesmod.common;
 
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.particles.ParticleTypes;
 
 public class Constants
 {
-    public static final String[] COLOURS =
+    public static final String[] COLOUR_ARRAY =
     {
         "white",
         "orange",
@@ -22,4 +24,24 @@ public class Constants
         "red",
         "black"
     };
+
+    public static class TorchProperties
+    {
+        public TorchProperties( String name, int lightLevel, BasicParticleType particleType )
+        {
+            this.name = name;
+            this.lightLevel = lightLevel;
+            this.particleType = particleType;
+        }
+        public String name;
+        public int lightLevel;
+        public BasicParticleType particleType;
+    }
+    public static final TorchProperties[] TORCH_PROPERTIES_ARRAY =
+    {
+        new TorchProperties( "torch", 14, ParticleTypes.FLAME ),
+        new TorchProperties( "soul_torch", 10, ParticleTypes.SOUL_FIRE_FLAME )
+    };
+
+    public static final int TORCH_COUNT = Constants.TORCH_PROPERTIES_ARRAY.length * Constants.COLOUR_ARRAY.length;
 }

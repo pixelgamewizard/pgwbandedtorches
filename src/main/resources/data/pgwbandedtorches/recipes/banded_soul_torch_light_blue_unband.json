@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "pgwbandedtorches:banded_soul_torch_light_blue"
+    }
+  ],
+  "result":
+  {
+    "item": "minecraft:torch",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "pgwbandedtorches:banded_soul_torch_cyan"
+    }
+  ],
+  "result":
+  {
+    "item": "pgwbandedtorches:banded_soul_torch_cyan",
+    "count": 2
+  }
+}

@@ -22,9 +22,9 @@ public class BandedTorchesMod
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
-        for (int colourIndex = 0; colourIndex < Constants.COLOURS.length; colourIndex++)
+        for (int torchIndex = 0; torchIndex < Constants.TORCH_COUNT; torchIndex++)
         {
-            ModBlocks.TorchBlockRegistryObjects torch = ModBlocks.torches[colourIndex];
+            ModBlocks.TorchBlockRegistryObjects torch = ModBlocks.torches[torchIndex];
             RenderTypeLookup.setRenderLayer(torch.block.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(torch.wallBlock.get(), RenderType.cutout());
         }

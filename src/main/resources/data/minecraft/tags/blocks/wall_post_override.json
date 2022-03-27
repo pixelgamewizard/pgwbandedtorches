@@ -17,7 +17,23 @@
         "pgwbandedtorches:banded_torch_brown",
         "pgwbandedtorches:banded_torch_green",
         "pgwbandedtorches:banded_torch_red",
-        "pgwbandedtorches:banded_torch_black"
+        "pgwbandedtorches:banded_torch_black",
+        "pgwbandedtorches:banded_soul_torch_white",
+        "pgwbandedtorches:banded_soul_torch_orange",
+        "pgwbandedtorches:banded_soul_torch_magenta",
+        "pgwbandedtorches:banded_soul_torch_light_blue",
+        "pgwbandedtorches:banded_soul_torch_yellow",
+        "pgwbandedtorches:banded_soul_torch_lime",
+        "pgwbandedtorches:banded_soul_torch_pink",
+        "pgwbandedtorches:banded_soul_torch_gray",
+        "pgwbandedtorches:banded_soul_torch_light_gray",
+        "pgwbandedtorches:banded_soul_torch_cyan",
+        "pgwbandedtorches:banded_soul_torch_purple",
+        "pgwbandedtorches:banded_soul_torch_blue",
+        "pgwbandedtorches:banded_soul_torch_brown",
+        "pgwbandedtorches:banded_soul_torch_green",
+        "pgwbandedtorches:banded_soul_torch_red",
+        "pgwbandedtorches:banded_soul_torch_black"
     ]
 }
 

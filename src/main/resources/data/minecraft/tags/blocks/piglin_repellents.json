@@ -1,0 +1,39 @@
+{
+    "replace": false,
+    "values":
+    [
+        "pgwbandedtorches:banded_soul_torch_white",
+        "pgwbandedtorches:banded_soul_torch_orange",
+        "pgwbandedtorches:banded_soul_torch_magenta",
+        "pgwbandedtorches:banded_soul_torch_light_blue",
+        "pgwbandedtorches:banded_soul_torch_yellow",
+        "pgwbandedtorches:banded_soul_torch_lime",
+        "pgwbandedtorches:banded_soul_torch_pink",
+        "pgwbandedtorches:banded_soul_torch_gray",
+        "pgwbandedtorches:banded_soul_torch_light_gray",
+        "pgwbandedtorches:banded_soul_torch_cyan",
+        "pgwbandedtorches:banded_soul_torch_purple",
+        "pgwbandedtorches:banded_soul_torch_blue",
+        "pgwbandedtorches:banded_soul_torch_brown",
+        "pgwbandedtorches:banded_soul_torch_green",
+        "pgwbandedtorches:banded_soul_torch_red",
+        "pgwbandedtorches:banded_soul_torch_black",
+        "pgwbandedtorches:banded_soul_torch_white_wall",
+        "pgwbandedtorches:banded_soul_torch_orange_wall",
+        "pgwbandedtorches:banded_soul_torch_magenta_wall",
+        "pgwbandedtorches:banded_soul_torch_light_blue_wall",
+        "pgwbandedtorches:banded_soul_torch_yellow_wall",
+        "pgwbandedtorches:banded_soul_torch_lime_wall",
+        "pgwbandedtorches:banded_soul_torch_pink_wall",
+        "pgwbandedtorches:banded_soul_torch_gray_wall",
+        "pgwbandedtorches:banded_soul_torch_light_gray_wall",
+        "pgwbandedtorches:banded_soul_torch_cyan_wall",
+        "pgwbandedtorches:banded_soul_torch_purple_wall",
+        "pgwbandedtorches:banded_soul_torch_blue_wall",
+        "pgwbandedtorches:banded_soul_torch_brown_wall",
+        "pgwbandedtorches:banded_soul_torch_green_wall",
+        "pgwbandedtorches:banded_soul_torch_red_wall",
+        "pgwbandedtorches:banded_soul_torch_black_wall"
+    ]
+}
+

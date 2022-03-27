@@ -9,11 +9,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.WallOrFloorItem;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import pixelgamewizard.bandedtorchesmod.common.Constants.TorchProperties;
 
 
 public class RegistrationHandler
@@ -22,41 +22,49 @@ public class RegistrationHandler
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BandedTorchesMod.MODID);
     static
     {
-        for (int colourIndex = 0; colourIndex < Constants.COLOURS.length; colourIndex++)
+        for (int torchPropertiesIndex = 0; torchPropertiesIndex < Constants.TORCH_PROPERTIES_ARRAY.length; torchPropertiesIndex++)
         {
-            String BANDED_TORCH_BASE_NAME = "banded_torch_";
-            String bandedTorchName = BANDED_TORCH_BASE_NAME + Constants.COLOURS[colourIndex];
-            RegistryObject<Block> blockRegistryObject = BLOCKS.register(
-                bandedTorchName,
-                () -> new TorchBlock(
-                    AbstractBlock.Properties
-                    .of(Material.DECORATION)
-                    .noCollission()
-                    .instabreak()
-                    .lightLevel((BlockState) -> {return 14;})
-                    .sound(SoundType.WOOD),
-                    ParticleTypes.FLAME));
-            ModBlocks.torches[colourIndex] = new ModBlocks.TorchBlockRegistryObjects();
-            ModBlocks.torches[colourIndex].block = blockRegistryObject;
-            RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
-                bandedTorchName + "_wall",
-                () -> new WallTorchBlock(
-                    AbstractBlock.Properties
-                    .of(Material.DECORATION)
-                    .noCollission()
-                    .instabreak()
-                    .lightLevel((BlockState) -> {return 14;})
-                    .sound(SoundType.WOOD)
-                    .lootFrom(blockRegistryObject),
-                    ParticleTypes.FLAME));
-            ModBlocks.torches[colourIndex].wallBlock = wallBlockRegistryObject;
-            ModBlocks.torches[colourIndex].item = ITEMS.register(
-                bandedTorchName,
-                () -> new WallOrFloorItem(
-                    blockRegistryObject.get(),
-                    wallBlockRegistryObject.get(),
-                    new Item.Properties()
-                    .tab(ItemGroup.TAB_DECORATIONS)));
+            TorchProperties torchProperties = Constants.TORCH_PROPERTIES_ARRAY[torchPropertiesIndex];
+            for (int colourIndex = 0; colourIndex < Constants.COLOUR_ARRAY.length; colourIndex++)
+            {
+                String bandedTorchName = "banded_" + torchProperties.name + "_" + Constants.COLOUR_ARRAY[colourIndex];
+                String bandedTorchWallName = bandedTorchName + "_wall";
+
+                RegistryObject<Block> blockRegistryObject = BLOCKS.register(
+                    bandedTorchName,
+                    () -> new TorchBlock(
+                        AbstractBlock.Properties
+                        .of(Material.DECORATION)
+                        .noCollission()
+                        .instabreak()
+                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
+                        .sound(SoundType.WOOD),
+                        torchProperties.particleType));
+                RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
+                    bandedTorchWallName,
+                    () -> new WallTorchBlock(
+                        AbstractBlock.Properties
+                        .of(Material.DECORATION)
+                        .noCollission()
+                        .instabreak()
+                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
+                        .sound(SoundType.WOOD)
+                        .lootFrom(blockRegistryObject),
+                        torchProperties.particleType));
+                RegistryObject<Item> itemRegistryObject = ITEMS.register(
+                    bandedTorchName,
+                    () -> new WallOrFloorItem(
+                        blockRegistryObject.get(),
+                        wallBlockRegistryObject.get(),
+                        new Item.Properties()
+                        .tab(ItemGroup.TAB_DECORATIONS)));
+
+                int torchIndex = ModBlocks.CalculateTorchIndex(torchPropertiesIndex, colourIndex);
+                ModBlocks.torches[torchIndex] = new ModBlocks.TorchBlockRegistryObjects();
+                ModBlocks.torches[torchIndex].block = blockRegistryObject;
+                ModBlocks.torches[torchIndex].wallBlock = wallBlockRegistryObject;
+                ModBlocks.torches[torchIndex].item = itemRegistryObject;
+            }
         }
     }
 
