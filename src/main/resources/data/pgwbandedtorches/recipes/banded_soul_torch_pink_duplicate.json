@@ -3,7 +3,7 @@
   "ingredients":
   [
     {
-      "item": "minecraft:torch"
+      "item": "minecraft:soul_torch"
     },
     {
       "item": "pgwbandedtorches:banded_soul_torch_pink"
