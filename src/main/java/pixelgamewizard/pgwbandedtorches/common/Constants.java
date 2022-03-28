@@ -1,4 +1,4 @@
-package pixelgamewizard.bandedtorchesmod.common;
+package pixelgamewizard.pgwbandedtorches.common;
 
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;

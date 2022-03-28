@@ -1,4 +1,4 @@
-package pixelgamewizard.bandedtorchesmod.common;
+package pixelgamewizard.pgwbandedtorches.common;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;

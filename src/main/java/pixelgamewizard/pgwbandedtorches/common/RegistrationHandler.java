@@ -1,4 +1,4 @@
-package pixelgamewizard.bandedtorchesmod.common;
+package pixelgamewizard.pgwbandedtorches.common;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import pixelgamewizard.bandedtorchesmod.common.Constants.TorchProperties;
+import pixelgamewizard.pgwbandedtorches.common.Constants.TorchProperties;
 
 
 public class RegistrationHandler
