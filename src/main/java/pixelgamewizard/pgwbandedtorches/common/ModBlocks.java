@@ -1,9 +1,11 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.RegistryObject;
 import org.apache.logging.log4j.Logger;
+
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
+
 import org.apache.logging.log4j.LogManager;
 
 

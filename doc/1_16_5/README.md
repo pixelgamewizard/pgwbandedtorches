@@ -26,6 +26,12 @@ You can copy a band from one torch over to another. You don't need one dye per t
 
 The same recipe will work for soul torches, unless you've customized the recipes through a data pack to work in some other way.
 
+## Configuration
+
+The configuration file was removed from the 1.16.5 version. If you want to change the icons or disable certain recipes, you can now do so through custom data packs!
+
+Note that the torch item icons are deliberately offset upward a little bit so that the band is more clearly visible (especially if you have more than double digits of that item), so be warned before changing them. :-)
+
 ## FAQ
 
 **Are there any dependencies?**
@@ -36,9 +42,9 @@ No. I might add optional dependencies sometime in the future, but my intention i
 
 There are no incompatibilities that I am aware of at the time of writing. I expect that the banded torches added by this mod might not adopt functionality from other mods added to normal torches, but you might try it anyway just to see.
 
-**Will you be backporting this mod to Minecraft version X?**
+**Will you be backporting/updating this mod to Minecraft version X?**
 
-I will not be backporting to previous versions.
+I will not be backporting to previous versions. I intend to update to the latest Minecraft 1.18 version fairly soon.
 
 ## Miscellaneous Information
 
@@ -46,5 +52,5 @@ The mod is provided as-is without guarantee or warranty of any kind. I strongly 
 
 Please go ahead and use this in modpacks, Youtube videos, Twitch streams, etc. I'd be happy if you let me know that you at least like the mod, but it isn't absolutely essential.
 
-If you find problems or have questions, the best place for letting me know is the project's GitHub page. Though if I don't respond, do feel free to give me a ping on [Twitter](https://twitter.com/PixelGameWizard)!
+If you find problems or have questions, the best place for letting me know is the project's GitHub page.
 

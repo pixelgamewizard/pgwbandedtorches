@@ -1,7 +1,7 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -25,8 +25,8 @@ public class BandedTorchesMod
         for (int torchIndex = 0; torchIndex < Constants.TORCH_COUNT; torchIndex++)
         {
             ModBlocks.TorchBlockRegistryObjects torch = ModBlocks.torches[torchIndex];
-            RenderTypeLookup.setRenderLayer(torch.block.get(), RenderType.cutout());
-            RenderTypeLookup.setRenderLayer(torch.wallBlock.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(torch.block.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(torch.wallBlock.get(), RenderType.cutout());
         }
     }
 }

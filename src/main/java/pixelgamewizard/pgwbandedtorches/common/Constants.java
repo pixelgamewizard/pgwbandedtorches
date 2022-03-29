@@ -1,7 +1,7 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import net.minecraft.particles.BasicParticleType;
-import net.minecraft.particles.ParticleTypes;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 
 public class Constants
 {
@@ -27,7 +27,7 @@ public class Constants
 
     public static class TorchProperties
     {
-        public TorchProperties( String name, int lightLevel, BasicParticleType particleType )
+        public TorchProperties( String name, int lightLevel, SimpleParticleType particleType )
         {
             this.name = name;
             this.lightLevel = lightLevel;
@@ -35,7 +35,7 @@ public class Constants
         }
         public String name;
         public int lightLevel;
-        public BasicParticleType particleType;
+        public SimpleParticleType particleType;
     }
     public static final TorchProperties[] TORCH_PROPERTIES_ARRAY =
     {

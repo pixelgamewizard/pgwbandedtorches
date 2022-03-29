@@ -1,18 +1,18 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.TorchBlock;
-import net.minecraft.block.WallTorchBlock;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.WallOrFloorItem;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.TorchBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WallTorchBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import pixelgamewizard.pgwbandedtorches.common.Constants.TorchProperties;
 
 
@@ -33,7 +33,7 @@ public class RegistrationHandler
                 RegistryObject<Block> blockRegistryObject = BLOCKS.register(
                     bandedTorchName,
                     () -> new TorchBlock(
-                        AbstractBlock.Properties
+                        BlockBehaviour.Properties
                         .of(Material.DECORATION)
                         .noCollission()
                         .instabreak()
@@ -43,7 +43,7 @@ public class RegistrationHandler
                 RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
                     bandedTorchWallName,
                     () -> new WallTorchBlock(
-                        AbstractBlock.Properties
+                        BlockBehaviour.Properties
                         .of(Material.DECORATION)
                         .noCollission()
                         .instabreak()
@@ -53,11 +53,11 @@ public class RegistrationHandler
                         torchProperties.particleType));
                 RegistryObject<Item> itemRegistryObject = ITEMS.register(
                     bandedTorchName,
-                    () -> new WallOrFloorItem(
+                    () -> new StandingAndWallBlockItem(
                         blockRegistryObject.get(),
                         wallBlockRegistryObject.get(),
                         new Item.Properties()
-                        .tab(ItemGroup.TAB_DECORATIONS)));
+                        .tab(CreativeModeTab.TAB_DECORATIONS)));
 
                 int torchIndex = ModBlocks.CalculateTorchIndex(torchPropertiesIndex, colourIndex);
                 ModBlocks.torches[torchIndex] = new ModBlocks.TorchBlockRegistryObjects();
