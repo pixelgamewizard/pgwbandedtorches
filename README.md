@@ -30,7 +30,7 @@ The same recipe will work for soul torches, unless you've customized the recipes
 
 **Are there any dependencies?**
 
-Generally you will need the most recent stable/recommended Forge version. For 1.18.2 you will need 40.0.36 or later (the alpha is 40.0.32 but users have reported issues with it). I might add optional mod dependencies sometime in the future, but my intention is to keep this mod free of required mod dependencies.
+Generally you will need the most recent stable/recommended Forge version. I might add optional mod dependencies sometime in the future, but my intention is to keep this mod free of required mod dependencies.
 
 **Are there any incompatibilities?**
 
