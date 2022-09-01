@@ -9,6 +9,7 @@
   - Floors
   - Walls (all cardinal directions)
   - On stone walls and a pillar will papear beneath
+  - CANNOT place in water
 - Torch drops in each of the following conditions:
   - Out of inventory
   - Punching
