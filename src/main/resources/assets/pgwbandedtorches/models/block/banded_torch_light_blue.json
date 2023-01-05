@@ -3,5 +3,6 @@
   "textures":
   {
     "torch": "pgwbandedtorches:block/banded_torch_light_blue"
-  }
+  },
+  "render_type": "cutout"
 }
