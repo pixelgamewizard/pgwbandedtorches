@@ -1,6 +1,6 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
@@ -56,8 +56,8 @@ public class RegistrationHandler
                     () -> new StandingAndWallBlockItem(
                         blockRegistryObject.get(),
                         wallBlockRegistryObject.get(),
-                        new Item.Properties()
-                        .tab(CreativeModeTab.TAB_DECORATIONS)));
+                        new Item.Properties(),
+                        Direction.DOWN));
 
                 int torchIndex = ModBlocks.CalculateTorchIndex(torchPropertiesIndex, colourIndex);
                 ModBlocks.torches[torchIndex] = new ModBlocks.TorchBlockRegistryObjects();

@@ -1,4 +1,6 @@
 - Items appear as expected in creative inventory
+  - functional items tab
+  - colored blocks tab
   - Correct icons appear
 - All recipes work
   - banding, unbanding, duplication
