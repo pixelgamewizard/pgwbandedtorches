@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -33,8 +32,7 @@ public class RegistrationHandler
                 RegistryObject<Block> blockRegistryObject = BLOCKS.register(
                     bandedTorchName,
                     () -> new TorchBlock(
-                        BlockBehaviour.Properties
-                        .of(Material.DECORATION)
+                        BlockBehaviour.Properties.of()
                         .noCollission()
                         .instabreak()
                         .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
@@ -43,8 +41,7 @@ public class RegistrationHandler
                 RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
                     bandedTorchWallName,
                     () -> new WallTorchBlock(
-                        BlockBehaviour.Properties
-                        .of(Material.DECORATION)
+                        BlockBehaviour.Properties.of()
                         .noCollission()
                         .instabreak()
                         .lightLevel((BlockState) -> {return torchProperties.lightLevel;})

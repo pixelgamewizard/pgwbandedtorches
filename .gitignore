@@ -1,10 +1,10 @@
 bin
 build
 run
-.gradle
-.settings
-
-*.launch
 .classpath
+.gradle
 .project
+.settings
+.vscode
+*.launch
 
