@@ -1,5 +1,6 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
 
@@ -8,8 +9,8 @@ public class BandedTorchesMod
 {
     public static final String MODID = "pgwbandedtorches";
 
-    public BandedTorchesMod()
+    public BandedTorchesMod(IEventBus eventBus)
     {
-        RegistrationHandler.init();
+        RegistrationHandler.init(eventBus);
     }
 }

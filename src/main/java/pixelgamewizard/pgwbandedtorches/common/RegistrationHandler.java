@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import pixelgamewizard.pgwbandedtorches.common.Constants.TorchProperties;
@@ -31,23 +31,25 @@ public class RegistrationHandler
 
                 DeferredHolder<Block, TorchBlock> blockRegistryObject = BLOCKS.register(
                     bandedTorchName,
-                    () -> new TorchBlock(BlockBehaviour.Properties.of()
-                        .noCollission()
-                        .instabreak()
-                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
-                        .sound(SoundType.WOOD),
-                        torchProperties.particleType
-                    ));
-                DeferredHolder<Block, TorchBlock> wallBlockRegistryObject = BLOCKS.register(
-                    bandedTorchWallName,
-                    () -> new WallTorchBlock(
+                    () -> new TorchBlock(
+                        torchProperties.particleType,
                         BlockBehaviour.Properties.of()
                         .noCollission()
                         .instabreak()
                         .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
                         .sound(SoundType.WOOD)
-                        .lootFrom(blockRegistryObject),
-                        torchProperties.particleType));
+                    ));
+                DeferredHolder<Block, TorchBlock> wallBlockRegistryObject = BLOCKS.register(
+                    bandedTorchWallName,
+                    () -> new WallTorchBlock(
+                        torchProperties.particleType,
+                        BlockBehaviour.Properties.of()
+                        .noCollission()
+                        .instabreak()
+                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
+                        .sound(SoundType.WOOD)
+                        .lootFrom(blockRegistryObject)
+                    ));
                 DeferredHolder<Item, StandingAndWallBlockItem> itemRegistryObject = ITEMS.register(
                     bandedTorchName,
                     () -> new StandingAndWallBlockItem(
@@ -65,9 +67,9 @@ public class RegistrationHandler
         }
     }
 
-    public static void init()
+    public static void init(IEventBus eventBus)
     {
-        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        BLOCKS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }
