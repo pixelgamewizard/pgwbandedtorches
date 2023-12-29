@@ -32,22 +32,24 @@ public class RegistrationHandler
                 RegistryObject<Block> blockRegistryObject = BLOCKS.register(
                     bandedTorchName,
                     () -> new TorchBlock(
-                        BlockBehaviour.Properties.of()
-                        .noCollission()
-                        .instabreak()
-                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
-                        .sound(SoundType.WOOD),
-                        torchProperties.particleType));
-                RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
-                    bandedTorchWallName,
-                    () -> new WallTorchBlock(
+                        torchProperties.particleType,
                         BlockBehaviour.Properties.of()
                         .noCollission()
                         .instabreak()
                         .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
                         .sound(SoundType.WOOD)
-                        .lootFrom(blockRegistryObject),
-                        torchProperties.particleType));
+                    ));
+                RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
+                    bandedTorchWallName,
+                    () -> new WallTorchBlock(
+                        torchProperties.particleType,
+                        BlockBehaviour.Properties.of()
+                        .noCollission()
+                        .instabreak()
+                        .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
+                        .sound(SoundType.WOOD)
+                        .lootFrom(blockRegistryObject)
+                    ));
                 RegistryObject<Item> itemRegistryObject = ITEMS.register(
                     bandedTorchName,
                     () -> new StandingAndWallBlockItem(
