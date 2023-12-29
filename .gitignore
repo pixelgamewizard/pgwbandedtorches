@@ -3,6 +3,7 @@ build
 run
 .classpath
 .gradle
+.idea
 .project
 .settings
 .vscode
