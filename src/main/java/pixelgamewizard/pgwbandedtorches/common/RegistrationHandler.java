@@ -1,6 +1,7 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
@@ -8,17 +9,16 @@ import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import pixelgamewizard.pgwbandedtorches.common.Constants.TorchProperties;
 
 
 public class RegistrationHandler
 {
-    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BandedTorchesMod.MODID);
-    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BandedTorchesMod.MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, BandedTorchesMod.MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, BandedTorchesMod.MODID);
     static
     {
         for (int torchPropertiesIndex = 0; torchPropertiesIndex < Constants.TORCH_PROPERTIES_ARRAY.length; torchPropertiesIndex++)
@@ -29,16 +29,16 @@ public class RegistrationHandler
                 String bandedTorchName = "banded_" + torchProperties.name + "_" + Constants.COLOUR_ARRAY[colourIndex];
                 String bandedTorchWallName = bandedTorchName + "_wall";
 
-                RegistryObject<Block> blockRegistryObject = BLOCKS.register(
+                DeferredHolder<Block, TorchBlock> blockRegistryObject = BLOCKS.register(
                     bandedTorchName,
-                    () -> new TorchBlock(
-                        BlockBehaviour.Properties.of()
+                    () -> new TorchBlock(BlockBehaviour.Properties.of()
                         .noCollission()
                         .instabreak()
                         .lightLevel((BlockState) -> {return torchProperties.lightLevel;})
                         .sound(SoundType.WOOD),
-                        torchProperties.particleType));
-                RegistryObject<Block> wallBlockRegistryObject = BLOCKS.register(
+                        torchProperties.particleType
+                    ));
+                DeferredHolder<Block, TorchBlock> wallBlockRegistryObject = BLOCKS.register(
                     bandedTorchWallName,
                     () -> new WallTorchBlock(
                         BlockBehaviour.Properties.of()
@@ -48,7 +48,7 @@ public class RegistrationHandler
                         .sound(SoundType.WOOD)
                         .lootFrom(blockRegistryObject),
                         torchProperties.particleType));
-                RegistryObject<Item> itemRegistryObject = ITEMS.register(
+                DeferredHolder<Item, StandingAndWallBlockItem> itemRegistryObject = ITEMS.register(
                     bandedTorchName,
                     () -> new StandingAndWallBlockItem(
                         blockRegistryObject.get(),
@@ -57,7 +57,7 @@ public class RegistrationHandler
                         Direction.DOWN));
 
                 int torchIndex = ModBlocks.CalculateTorchIndex(torchPropertiesIndex, colourIndex);
-                ModBlocks.torches[torchIndex] = new ModBlocks.TorchBlockRegistryObjects();
+                ModBlocks.torches[torchIndex] = new ModBlocks.TorchBlockDeferredHolders();
                 ModBlocks.torches[torchIndex].block = blockRegistryObject;
                 ModBlocks.torches[torchIndex].wallBlock = wallBlockRegistryObject;
                 ModBlocks.torches[torchIndex].item = itemRegistryObject;

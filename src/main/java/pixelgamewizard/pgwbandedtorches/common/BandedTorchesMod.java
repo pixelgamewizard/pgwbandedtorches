@@ -1,10 +1,10 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 
 @Mod(BandedTorchesMod.MODID)
@@ -12,23 +12,15 @@ public class BandedTorchesMod
 {
     public static final String MODID = "pgwbandedtorches";
 
-    public BandedTorchesMod()
+    public BandedTorchesMod(IEventBus modEventBus)
     {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::handleCreativeModeTabEvent);
-        MinecraftForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(BandedTorchesMod.class);
         RegistrationHandler.init();
     }
 
-    private void handleCreativeModeTabEvent(final BuildCreativeModeTabContentsEvent event)
-    {
-        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS || 
-            event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS)
-        {
-            for (int torchIndex = 0; torchIndex < Constants.TORCH_COUNT; torchIndex++)
-            {
-                ModBlocks.TorchBlockRegistryObjects torch = ModBlocks.torches[torchIndex];
-                event.accept(torch.item);
-            }
-        }
-    }
+    // For some reason the NeoForge API introduced a requirement that mod classes
+    // implement a SubscribeEvent, even if there are event handlers elsewhere.
+    // https://neoforged.net/news/20.2eventbus-changes/
+    @SubscribeEvent
+    private static void dummyFunction(final BuildCreativeModeTabContentsEvent ignored) {}
 }

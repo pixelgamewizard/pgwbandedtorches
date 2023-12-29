@@ -1,24 +1,24 @@
 package pixelgamewizard.pgwbandedtorches.common;
 
-import org.apache.logging.log4j.Logger;
-
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
-
+import net.minecraft.world.level.block.TorchBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 
 public class ModBlocks
 {
     private static final Logger LOGGER = LogManager.getLogger();
-    static class TorchBlockRegistryObjects
+    static class TorchBlockDeferredHolders
     {
-        public RegistryObject<Block> block;
-        public RegistryObject<Block> wallBlock;
-        public RegistryObject<Item> item;
+        public DeferredHolder<Block, TorchBlock> block;
+        public DeferredHolder<Block, TorchBlock> wallBlock;
+        public DeferredHolder<Item, StandingAndWallBlockItem> item;
     }
-    public static final TorchBlockRegistryObjects[] torches = new TorchBlockRegistryObjects[Constants.TORCH_COUNT];
+    public static final TorchBlockDeferredHolders[] torches = new TorchBlockDeferredHolders[Constants.TORCH_COUNT];
 
     public static int CalculateTorchIndex(int torchPropertiesIndex, int colourIndex)
     {
